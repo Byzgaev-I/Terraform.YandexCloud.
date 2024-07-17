@@ -107,6 +107,6 @@ variable "metadata_ssh" {
   type        = map(string)
   default     = {
     serial-port-enable = "1"
-    ssh-keys          = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO6+gW2b2YC/Rm4ejiaa/+RH8SZ2Eb6LSQzBVtDLWExm kshatyy@ya.ru"
+    ssh-keys          = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHS1GKF9aYxPZ9/wD5aV0vNax5kVAbFPQ+8DlguBBkE bctrans@yandex.ru"
   }
 }
