@@ -13,5 +13,3 @@ provider "yandex" {
   folder_id = "b1gam4o6rj97es4peaq4"  # Замените на ваш реальный folder_id
   zone      = "ru-central1-a"  # Укажите вашу зону
 }
-  #service_account_key_file = file("~/.authorized_key.json")
-}
