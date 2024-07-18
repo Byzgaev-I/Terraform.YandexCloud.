@@ -30,5 +30,3 @@ variable "vpc_name" {
   default     = "develop"
   description = "VPC network & subnet name"
 }
-
-# default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHS1GKF9aYxPZ9/wD5aV0vNax5kVAbFPQ+8DlguBBkE bctrans@ya.ru"
