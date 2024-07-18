@@ -15,7 +15,7 @@ variable "vm_resources" {
   }
 }
 
-variable "vm_metadata" {
+#variable "vm_metadata" {
   type        = map(string)
   description = "Metadata map for VMs"
   default = {
