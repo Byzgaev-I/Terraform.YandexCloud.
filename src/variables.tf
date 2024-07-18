@@ -30,3 +30,12 @@ variable "vpc_name" {
   default     = "develop"
   description = "VPC network & subnet name"
 }
+
+variable "vm_metadata" {
+  type        = map(string)
+  description = "Metadata map for VMs"
+  default = {
+    serial-port-enable = "1"
+    ssh-keys           = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJJiBbfhMwJ3Vr6ZxGSYMpal8qGgsWRfaEEAVwJRWlkc bctrans@yandex.ru"
+  }
+}
