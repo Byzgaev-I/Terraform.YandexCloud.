@@ -34,33 +34,14 @@ variable "vpc_name" {
 
 ###ssh vars
 
-variable "vms_ssh_root_key" {
-  type        = string
-  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHS1GKF9aYxPZ9/wD5aV0vNax5kVAbFPQ+8DlguBBkE bctrans@ya.ru"
-  description = "ssh-keygen -t ed25519"
-}
+#variable "vms_ssh_root_key" {
+#  type        = string
+#  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHS1GKF9aYxPZ9/wD5aV0vNax5kVAbFPQ+8DlguBBkE bctrans@ya.ru"
+#  description = "ssh-keygen -t ed25519"
+#}
 
-variable "netology-develop-platform" {
-  type = string
-  default     = "netology"
-}
 
-variable "env" {
-  type = string
-  default     = "develop"
-}
 
-variable "project" {
-  type = string
-  default     = "platform"
-}
 
-variable "role" {
-   type = string
-   default = "web"
-}
 
-variable "role1" {
-   type = string
-   default = "db"
-}
+# default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHS1GKF9aYxPZ9/wD5aV0vNax5kVAbFPQ+8DlguBBkE bctrans@ya.ru"
