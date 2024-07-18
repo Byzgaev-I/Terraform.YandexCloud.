@@ -79,3 +79,15 @@ resource "yandex_compute_instance" "platform-db" {
   }
   folder_id = var.folder_id  # Добавили folder_id
 }
+
+output "token" {
+  value = var.token
+}
+
+output "cloud_id" {
+  value = var.cloud_id
+}
+
+output "folder_id" {
+  value = var.folder_id
+}
