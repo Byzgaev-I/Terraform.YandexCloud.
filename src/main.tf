@@ -1,32 +1,13 @@
-terraform {
-  required_providers {
-    yandex = {
-      source  = "yandex-cloud/yandex"
-      version = "0.124.0"
-    }
-  }
-  required_version = ">=1.5"
-}
-
-provider "yandex" {
-  token     = var.token
-  cloud_id  = var.cloud_id
-  folder_id = var.folder_id
-  zone      = var.default_zone
-}
-
 resource "yandex_vpc_network" "develop" {
-  name      = var.vpc_name
-  folder_id = var.folder_id  # Добавили folder_id
+  name = var.vpc_name
 }
-
 resource "yandex_vpc_subnet" "develop" {
   name           = var.vpc_name
   zone           = var.default_zone
   network_id     = yandex_vpc_network.develop.id
   v4_cidr_blocks = var.default_cidr
-  folder_id      = var.folder_id  # Добавили folder_id
 }
+
 
 data "yandex_compute_image" "ubuntu" {
   family = "ubuntu-2004-lts"
@@ -53,7 +34,6 @@ resource "yandex_compute_instance" "platform" {
     subnet_id = yandex_vpc_subnet.develop.id
     nat       = var.vm_web_network_nat
   }
-  folder_id = var.folder_id  # Добавили folder_id
 }
 
 resource "yandex_compute_instance" "platform-db" {
@@ -77,17 +57,4 @@ resource "yandex_compute_instance" "platform-db" {
     subnet_id = yandex_vpc_subnet.develop.id
     nat       = var.vm_db_network_nat
   }
-  folder_id = var.folder_id  # Добавили folder_id
-}
-
-output "token" {
-  value = var.token
-}
-
-output "cloud_id" {
-  value = var.cloud_id
-}
-
-output "folder_id" {
-  value = var.folder_id
 }
