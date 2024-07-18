@@ -1,3 +1,4 @@
+###cloud vars
 variable "token" {
   type        = string
   description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
@@ -18,7 +19,6 @@ variable "default_zone" {
   default     = "ru-central1-a"
   description = "https://cloud.yandex.ru/docs/overview/concepts/geo-scope"
 }
-
 variable "default_cidr" {
   type        = list(string)
   default     = ["10.0.1.0/24"]
@@ -31,11 +31,11 @@ variable "vpc_name" {
   description = "VPC network & subnet name"
 }
 
-variable "vm_metadata" {
-  type        = map(string)
-  description = "Metadata map for VMs"
-  default = {
-    serial-port-enable = "1"
-    ssh-keys           = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJJiBbfhMwJ3Vr6ZxGSYMpal8qGgsWRfaEEAVwJRWlkc bctrans@yandex.ru"
-  }
+
+###ssh vars
+
+variable "vms_ssh_root_key" {
+  type        = string
+  default     = "<your_ssh_ed25519_key>"
+  description = "ssh-keygen -t ed25519"
 }
