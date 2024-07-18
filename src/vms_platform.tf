@@ -20,7 +20,7 @@ variable "vm_metadata" {
   description = "Metadata map for VMs"
   default = {
     serial-port-enable = "1"
-    ssh-keys           = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFHS1GKF9aYxPZ9/wD5aV0vNax5kVAbFPQ+8DlguBBkE bctrans@yandex.ru"
+    ssh-keys           = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJJiBbfhMwJ3Vr6ZxGSYMpal8qGgsWRfaEEAVwJRWlkc bctrans@yandex.ru"
   }
 }
 
