@@ -1,44 +1,44 @@
 resource "yandex_vpc_network" "develop" {
-  name = "develop"
+  name = var.vpc_name
 }
 
 resource "yandex_vpc_subnet" "develop" {
-  name           = "develop"
-  zone           = "ru-central1-a"
+  name           = var.vpc_name
+  zone           = var.default_zone
   network_id     = yandex_vpc_network.develop.id
-  v4_cidr_blocks = ["10.0.1.0/24"]
+  v4_cidr_blocks = var.default_cidr
 }
 
 resource "yandex_compute_instance" "platform" {
-  name        = "netology-develop-platform-web"
-  platform_id = "standard-v1"  # Обновите идентификатор платформы, если нужно
-  zone        = "ru-central1-a"
+  name        = var.vm_web_name
+  platform_id = var.vm_web_platform_id
+  zone        = var.vm_web_zone
 
   resources {
-    core_fraction = 5
-    cores         = 2
-    memory        = 1
+    core_fraction = var.vm_web_core_fraction
+    cores         = var.vm_web_cores
+    memory        = var.vm_web_memory
   }
 
   boot_disk {
     initialize_params {
-      image_id = "fd8t24r7o6m7fdvlp47l"
-      type     = "network-hdd"
+      image_id = var.vm_web_image_id
+      type     = var.vm_web_disk_type
     }
   }
 
   network_interface {
     subnet_id = yandex_vpc_subnet.develop.id
-    nat       = true
+    nat       = var.vm_web_nat
   }
 
   metadata = {
-    "serial-port-enable" = "1"
-    "ssh-keys"           = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICMLupjJ1DJ6oImS9OyvFFNenNk8/hiRrzkWIZ171DFa root@debian12-2"
+    "serial-port-enable" = var.vm_web_serial_port_enable
+    "ssh-keys"           = var.vm_web_ssh_keys
   }
 
   scheduling_policy {
-    preemptible = true
+    preemptible = var.vm_web_preemptible
   }
 }
 
