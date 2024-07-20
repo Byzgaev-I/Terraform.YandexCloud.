@@ -36,4 +36,28 @@ variable "vms_ssh_root_key" {
   description = "ssh-keygen -t ed25519"
 }
 
-# Удалил переменные для имен ВМ
+variable "vms_resources" {
+  type = map(map(any))
+  default = {
+    vm_web = {
+      core_fraction = 5
+      cores         = 2
+      memory        = 1
+    }
+    vm_db = {
+      core_fraction = 20
+      cores         = 2
+      memory        = 2
+    }
+  }
+  description = "Resource configurations for VMs"
+}
+
+variable "vms_metadata" {
+  type = map(string)
+  default = {
+    "serial-port-enable" = "1"
+    "ssh-keys"           = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICMLupjJ1DJ6oImS9OyvFFNenNk8/hiRrzkWIZ171DFa root@debian12-2"
+  }
+  description = "Metadata for VMs"
+}
