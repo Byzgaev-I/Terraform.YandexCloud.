@@ -236,3 +236,37 @@ variable "vm_web_preemptible" {
 ```
 
 ![image.jpg](https://github.com/Byzgaev-I/Terraform.YandexCloud./blob/main/2.png)
+
+
+---
+
+### Задание 3
+
+1) Создайте в корне проекта файл 'vms_platform.tf' . Перенесите в него все переменные первой ВМ.
+2) Скопируйте блок ресурса и создайте с его помощью вторую ВМ в файле main.tf: "netology-develop-platform-db" , cores  = 2, memory = 2, core_fraction = 20. Объявите её переменные с префиксом vm_db_ в том же файле ('vms_platform.tf'). ВМ должна работать в зоне "ru-central1-b"
+3) Примените изменения.
+
+### Выполнения задания 3
+
+
+1) Создал в корне проекта файл 'vms_platform.tf' . Перенес в него все переменные первой ВМ.
+
+2) Скопировал блок ресурса и создал с его помощью вторую ВМ в файле main.tf: "netology-develop-platform-db" , cores  = 2, memory = 2, core_fraction = 20. Объявите её переменные с префиксом vm_db_ в том же файле ('vms_platform.tf'). ВМ работает в зоне "ru-central1-b".
+
+3) Применил изменения. Создал еще одну виртуальную машину.
+
+
+![image.jpg](https://github.com/Byzgaev-I/Terraform.YandexCloud./blob/main/3.1%20ДЗ.png)
+
+![image.jpg](https://github.com/Byzgaev-I/Terraform.YandexCloud./blob/main/3%20.png) 
+
+
+
+
+
+
+
+
+
+
+
