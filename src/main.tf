@@ -18,7 +18,7 @@ resource "yandex_vpc_subnet" "develop" {
 
 resource "yandex_compute_instance" "platform" {
   name        = "netology-develop-platform-web"
-  platform_id = "standard-v3"  # Обновите идентификатор платформы, если нужно
+  platform_id = "standard-v1"  # Обновите идентификатор платформы, если нужно
   zone        = "ru-central1-a"
 
   resources {
