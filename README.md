@@ -300,6 +300,63 @@ output "vm_instances_info" {
 ![image.jpg](https://github.com/Byzgaev-I/Terraform.YandexCloud./blob/main/4.png) 
 
 
+---
+
+### Задание 5
+
+1) В файле locals.tf опишите в одном local-блоке имя каждой ВМ, используйте интерполяцию ${..} с НЕСКОЛЬКИМИ переменными по примеру из лекции.
+2) Замените переменные внутри ресурса ВМ на созданные вами local-переменные.
+3) Примените изменения.
+
+### Выполнения задания 5
+
+Создал файл locals.tf, в котором объявил local-переменные для имен ВМ, используя интерполяцию, а затем заменим переменные в файле variables.tf на созданные local-переменные.
+В корне проекта и добавил в него необходимые local-переменные.
+
+```hcl
+locals {
+  project = "netology-develop-platform"
+  env_web = "web"
+  env_db  = "db"
+  vm_web_instance_name = "${local.project}-${local.env_web}"
+  vm_db_instance_name  = "${local.project}-${local.env_db}"
+}
+
+```
+
+![image.jpg](https://github.com/Byzgaev-I/Terraform.YandexCloud./blob/main/5%20-%20locals.png) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
