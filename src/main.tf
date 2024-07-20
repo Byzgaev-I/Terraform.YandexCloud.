@@ -39,3 +39,11 @@ resource "yandex_compute_instance" "platform" {
     ssh-keys           = "ubuntu:${var.vms_ssh_root_key}"
   }
 }
+
+output "instance_id" {
+  value = yandex_compute_instance.platform.id
+}
+
+output "external_ip_address" {
+  value = yandex_compute_instance.platform.network_interface[0].nat_ip_address
+}
