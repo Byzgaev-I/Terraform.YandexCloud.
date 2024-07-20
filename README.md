@@ -294,6 +294,10 @@ output "vm_instances_info" {
 
 ```
 
+Принял изменение. 
+Также видим вывод значений ip-адресов команды terraform output.
+
+![image.jpg](https://github.com/Byzgaev-I/Terraform.YandexCloud./blob/main/4.png) 
 
 
 
