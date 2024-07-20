@@ -15,9 +15,9 @@ resource "yandex_compute_instance" "platform" {
   zone        = var.vm_web_zone
 
   resources {
-    core_fraction = var.vm_web_core_fraction
-    cores         = var.vm_web_cores
-    memory        = var.vm_web_memory
+    core_fraction = var.vms_resources.vm_web.core_fraction
+    cores         = var.vms_resources.vm_web.cores
+    memory        = var.vms_resources.vm_web.memory
   }
 
   boot_disk {
@@ -32,10 +32,7 @@ resource "yandex_compute_instance" "platform" {
     nat       = var.vm_web_nat
   }
 
-  metadata = {
-    "serial-port-enable" = var.vm_web_serial_port_enable
-    "ssh-keys"           = var.vm_web_ssh_keys
-  }
+  metadata = var.vms_metadata
 
   scheduling_policy {
     preemptible = var.vm_web_preemptible
@@ -48,9 +45,9 @@ resource "yandex_compute_instance" "platform_db" {
   zone        = var.vm_db_zone
 
   resources {
-    core_fraction = var.vm_db_core_fraction
-    cores         = var.vm_db_cores
-    memory        = var.vm_db_memory
+    core_fraction = var.vms_resources.vm_db.core_fraction
+    cores         = var.vms_resources.vm_db.cores
+    memory        = var.vms_resources.vm_db.memory
   }
 
   boot_disk {
@@ -65,10 +62,7 @@ resource "yandex_compute_instance" "platform_db" {
     nat       = var.vm_db_nat
   }
 
-  metadata = {
-    "serial-port-enable" = var.vm_db_serial_port_enable
-    "ssh-keys"           = var.vm_db_ssh_keys
-  }
+  metadata = var.vms_metadata
 
   scheduling_policy {
     preemptible = var.vm_db_preemptible
