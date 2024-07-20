@@ -1,10 +1,3 @@
-provider "yandex" {
-  token     = "y0_AgAAAAAAqYCBAATuwQAAAAEKezjYAADtzaLyKlNM7Z0e4gbif4KWCNHUjw"
-  cloud_id  = "aje8qujun7eobprev455"
-  folder_id = "b1gam4o6rj97es4peaq4"
-  zone      = "ru-central1-a"
-}
-
 resource "yandex_vpc_network" "develop" {
   name = "develop"
 }
