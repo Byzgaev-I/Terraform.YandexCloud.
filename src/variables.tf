@@ -35,3 +35,5 @@ variable "vms_ssh_root_key" {
   type        = string
   description = "ssh-keygen -t ed25519"
 }
+
+# Удалил переменные для имен ВМ
