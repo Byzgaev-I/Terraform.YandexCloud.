@@ -19,7 +19,7 @@
 - скриншот консоли, curl должен отобразить тот же внешний ip-адрес;
 - ответы на вопросы.
 
-### Выполнения задания
+### Выполнения задания 1
 
 1) Изучил проект.
 
@@ -36,13 +36,13 @@
 - Cores 1 не может быть, потомучто согласно документации минимальное количество виртуальных ядер процессора для всех платформ равно двум.
 
   
+![image.jpg](https://github.com/Byzgaev-I/Terraform.YandexCloud./blob/main/1-2.png)
 
 
+![image.jpg](https://github.com/Byzgaev-I/Terraform.YandexCloud./blob/main/1.png)
 
 
-
-
-
+![image.jpg](https://github.com/Byzgaev-I/Terraform.YandexCloud./blob/main/1-3.png)
 
 
 
