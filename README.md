@@ -231,10 +231,8 @@ variable "vm_web_preemptible" {
   default     = true
   description = "Enable preemptible flag for the VM"
 }
-
 ```
 
-![image.jpg](https://github.com/Byzgaev-I/Terraform.YandexCloud./blob/main/2.png)
 
 
 
