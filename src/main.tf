@@ -34,30 +34,3 @@ resource "yandex_compute_instance" "platform1" {
       nat       = true
    }
 }
-
-
-data "yandex_compute_image" "ubuntu2" {
-  family = var.vm_db_family
-}
-resource "yandex_compute_instance" "platform2" {
-  name        = local.vm_db_instance_name
-  platform_id = var.vm_db_platform_id
-  metadata    = var.common_metadata
-  resources {
-    cores         = var.vms_resources.vm_db_resources.cores
-    memory        = var.vms_resources.vm_db_resources.memory
-    core_fraction = var.vms_resources.vm_db_resources.core_fraction
-  }
-  boot_disk {
-    initialize_params {
-      image_id = data.yandex_compute_image.ubuntu.image_id
-    }
-  }
-  scheduling_policy {
-    preemptible = true
-  }
-  network_interface {
-    subnet_id = yandex_vpc_subnet.develop.id
-    nat       = true
-  }
-}
